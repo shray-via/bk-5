@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { BookMarked, LibraryBig, RefreshCcw } from 'lucide-react';
+import { BookMarked, LibraryBig, RefreshCcw, Sparkles } from 'lucide-react';
 import BookCard from './components/BookCard';
 
 export default function App() {
@@ -57,6 +57,12 @@ export default function App() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">Categories</p>
             <h2 className="mt-1 text-2xl font-semibold tracking-tight text-ink-700">Pick a shelf mood</h2>
+          </div>
+          <div className="rounded-2xl bg-accent-100 px-4 py-3 text-sm font-medium text-ink-700 md:mr-auto md:ml-6">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-accent-600" />
+              <span>{books.length} books across {Math.max(categories.length - 1, 0)} categories</span>
+            </div>
           </div>
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
